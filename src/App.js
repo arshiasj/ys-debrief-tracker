@@ -15,7 +15,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Landing/>}/>
+        <Route path="/ys-debrief-tracker/" element={<Landing/>}/>
         <Route path="/slotName" element={<SlotRole/>}/>
         <Route path="/password" element={<HostRole/>}/>
         <Route path="/slot" element={<SlotScreen/>}/>

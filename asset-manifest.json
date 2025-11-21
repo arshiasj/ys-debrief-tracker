@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/ys-debrief-tracker/static/css/main.e6c13ad2.css",
-    "main.js": "/ys-debrief-tracker/static/js/main.6d27e7fa.js",
+    "main.js": "/ys-debrief-tracker/static/js/main.b026984d.js",
     "static/js/453.d2fbc0c8.chunk.js": "/ys-debrief-tracker/static/js/453.d2fbc0c8.chunk.js",
     "index.html": "/ys-debrief-tracker/index.html",
     "main.e6c13ad2.css.map": "/ys-debrief-tracker/static/css/main.e6c13ad2.css.map",
-    "main.6d27e7fa.js.map": "/ys-debrief-tracker/static/js/main.6d27e7fa.js.map",
+    "main.b026984d.js.map": "/ys-debrief-tracker/static/js/main.b026984d.js.map",
     "453.d2fbc0c8.chunk.js.map": "/ys-debrief-tracker/static/js/453.d2fbc0c8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.6d27e7fa.js"
+    "static/js/main.b026984d.js"
   ]
 }

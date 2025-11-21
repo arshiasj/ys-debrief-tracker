@@ -108,34 +108,36 @@ export function HostScreen() {
     const addingOn = queues.addingOn || [];
     const newPoint = queues.newPoint || [];
 
+    // 1️⃣ Pick next person in priority order
     const next =
-      shakyHands[0] || addingOn[0] || newPoint[0] || "";
+        (shakyHands.length > 0 && shakyHands[0]) ||
+        (addingOn.length > 0 && addingOn[0]) ||
+        (newPoint.length > 0 && newPoint[0]) ||
+        "";
 
+    // Update Firebase
     await set(ref(db, "currentSpeaker"), next);
 
-    if (!next) return;
+    if (!next) return; // no one to process
 
-    // Remove from whichever queue they came from
+    // 2️⃣ Remove next from the appropriate queue
     if (shakyHands.includes(next)) {
-      await set(ref(db, "queues/shakyHands"), shakyHands.slice(1));
-      await update(ref(db, "counts"), { shaky: 0 });
+        await set(ref(db, "queues/shakyHands"), shakyHands.slice(1));
+        await update(ref(db, "counts"), { shaky: shakyHands.length - 1 });
+    } else if (addingOn.includes(next)) {
+        await set(ref(db, "queues/addingOn"), addingOn.slice(1));
+    } else if (newPoint.includes(next)) {
+        await set(ref(db, "queues/newPoint"), newPoint.slice(1));
     }
 
-    if (addingOn.includes(next)) {
-      await set(ref(db, "queues/addingOn"), addingOn.slice(1));
-    }
-
-    if (newPoint.includes(next)) {
-      await set(ref(db, "queues/newPoint"), newPoint.slice(1));
-    }
-
-    // Reset next speaker's personal flags
+    // 3️⃣ Reset their SLOT flags
     await update(ref(db, `slotStates/${next}`), {
-      shaky: false,
-      addingOn: false,
-      newPoint: false
+        shaky: false,
+        addingOn: false,
+        newPoint: false,
     });
-  };
+    };
+
 
   return (
     <div className="host-container">

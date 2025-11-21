@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+
+import React, { useState, useEffect } from "react";
+import { db } from './firebase';
+import { ref, onValue } from "firebase/database";
+
+import { HashRouter as Router, Routes, Route } from "react-router";
+import { Landing } from './pages/landing';
+import { SlotRole } from './pages/slotRole';
+import { HostRole } from './pages/hostRole';
+import { SlotScreen } from './pages/slotScreen';
+import { HostScreen } from './pages/hostScreen';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Landing/>}/>
+        <Route path="/slotName" element={<SlotRole/>}/>
+        <Route path="/password" element={<HostRole/>}/>
+        <Route path="/slot" element={<SlotScreen/>}/>
+        <Route path="/host" element={<HostScreen/>}/>
+      </Routes>
+    </Router>
+
   );
 }
 

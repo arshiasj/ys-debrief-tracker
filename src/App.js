@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { db } from './firebase';
 import { ref, onValue } from "firebase/database";
 
-import { HashRouter as Router, Routes, Route } from "react-router";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { Landing } from './pages/landing';
 import { SlotRole } from './pages/slotRole';
 import { HostRole } from './pages/hostRole';
@@ -15,7 +15,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/ys-debrief-tracker/" element={<Landing/>}/>
+        <Route path="/" element={<Landing/>}/>
         <Route path="/slotName" element={<SlotRole/>}/>
         <Route path="/password" element={<HostRole/>}/>
         <Route path="/slot" element={<SlotScreen/>}/>

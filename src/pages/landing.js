@@ -1,30 +1,22 @@
+import React from "react";
 import { Link } from "react-router-dom";
-import React, { useEffect, useState } from "react";
-import { db } from "../firebase.js";
-import { ref, onValue } from "firebase/database";
+import "./Landing.css";
+
 export function Landing() {
-    const [value, setValue] = useState("");
-    useEffect(() => {
-        // Reference to /test in the database
-        const testRef = ref(db, "test");
+  return (
+    <div className="landing-container">
+      
+      <h1 className="title">
+        <span className="brush-highlight">SLOT Debrief Tracker</span>
+      </h1>
 
-        // Listen for real-time updates
-        onValue(testRef, (snapshot) => {
-        const data = snapshot.val();
-        setValue(data);
-        });
-    }, []);
+      <p className="subtitle">Who are you?</p>
 
-    return (
-        <>
-            <div style={{ padding: "30px" }}>
-                <h1>Firebase Test</h1>
-                <p>Value from database:</p>
-                <pre>{JSON.stringify(value, null, 2)}</pre>
-            </div>
-            <Link to="/slotName">SLOT</Link>
-            <Link to="/password">Host</Link>
-        </>
-    );
+      <div className="button-container">
+        <Link to="/slotName" className="big-button">SLOT</Link>
+        <Link to="/password" className="big-button">Host</Link>
+      </div>
+
+    </div>
+  );
 }
-

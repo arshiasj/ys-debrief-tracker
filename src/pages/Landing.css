@@ -1,0 +1,77 @@
+/* Grey background + full-page centering */
+.landing-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* center vertically */
+  align-items: center;       /* center horizontally */
+  background: #f5f5f5;       /* light grey */
+  text-align: center;
+}
+
+/* Title */
+.title {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+/* Subtitle (italicized) */
+.subtitle {
+  font-size: 22px;
+  font-style: italic;
+  margin-bottom: 30px;
+}
+
+/* Button container */
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* spacing between buttons */
+}
+
+/* Bigger, nicer buttons */
+.big-button {
+  background: white;
+  color: black;
+  padding: 18px 30px;     /* bigger! */
+  font-size: 22px;        /* bigger text */
+  font-weight: 600;
+  border-radius: 14px;
+  text-decoration: none;
+  width: 240px;           /* wider button */
+  box-shadow: 0 3px 8px rgba(0,0,0,0.18);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.big-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 12px rgba(0,0,0,0.22);
+}
+
+
+
+/* -------------------------- */
+/* Brush Highlight Background */
+/* -------------------------- */
+
+.brush-highlight {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+
+.brush-highlight::before {
+  content: "";
+  position: absolute;
+  left: -30px;
+  right: -50px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 110%; /* adjust stroke height */
+  background-image: url('../stroke3.png');
+  background-size: cover; /* stretch horizontally */
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -1;
+}

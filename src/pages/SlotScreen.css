@@ -1,0 +1,35 @@
+/* Use the same centering as Landing */
+.slot-buttons-wrapper {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 300px;
+}
+
+/* Base button appearance */
+.slot-toggle-btn {
+  width: 100%;
+  padding: 18px 20px;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 12px;
+  border: none;
+  background: white;
+  color: black;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+/* Active (red) state */
+.slot-toggle-btn.active {
+  background: #ff5e5e;
+  color: white;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+/* Hover effect */
+.slot-toggle-btn:hover {
+  transform: translateY(-3px);
+}

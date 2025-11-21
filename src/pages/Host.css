@@ -101,3 +101,54 @@
 .speaker-text {
   display: inline-block;
 }
+/* ------------------------ */
+/* MOBILE RESPONSIVENESS    */
+/* ------------------------ */
+@media (max-width: 480px) {
+
+  .landing-container,
+  .host-container {
+    padding: 20px;
+    justify-content: flex-start; /* prevents weird vertical stretching */
+  }
+
+  .title {
+    font-size: 32px;   /* shrink title so it fits */
+  }
+
+  .subtitle {
+    font-size: 18px;
+  }
+
+  .button-container,
+  .slot-buttons-wrapper {
+    width: 100%; /* full width on mobile */
+    align-items: center;
+  }
+
+  .big-button,
+  .slot-toggle-btn,
+  .next-btn,
+  .clear-all-btn {
+    width: 90%;          /* instead of fixed pixel width */
+    font-size: 18px;
+    padding: 14px;
+  }
+
+  .queue-card {
+    width: 100%;         /* let queues stack beautifully */
+    margin-bottom: 20px;
+  }
+
+  .columns {
+    flex-direction: column;  /* stack columns vertically */
+    gap: 20px;
+  }
+
+  .current-speaker {
+    font-size: 22px;
+    text-align: center;
+    word-break: break-word; /* prevents name overflow */
+  }
+}
+

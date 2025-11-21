@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/ys-debrief-tracker/static/css/main.ffe75116.css",
+    "main.css": "/ys-debrief-tracker/static/css/main.f832e0f7.css",
     "main.js": "/ys-debrief-tracker/static/js/main.550a0043.js",
     "static/js/453.d2fbc0c8.chunk.js": "/ys-debrief-tracker/static/js/453.d2fbc0c8.chunk.js",
     "static/media/stroke3.png": "/ys-debrief-tracker/static/media/stroke3.8d7b8b9f67a7fd3eedd9.png",
     "index.html": "/ys-debrief-tracker/index.html",
-    "main.ffe75116.css.map": "/ys-debrief-tracker/static/css/main.ffe75116.css.map",
+    "main.f832e0f7.css.map": "/ys-debrief-tracker/static/css/main.f832e0f7.css.map",
     "main.550a0043.js.map": "/ys-debrief-tracker/static/js/main.550a0043.js.map",
     "453.d2fbc0c8.chunk.js.map": "/ys-debrief-tracker/static/js/453.d2fbc0c8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ffe75116.css",
+    "static/css/main.f832e0f7.css",
     "static/js/main.550a0043.js"
   ]
 }

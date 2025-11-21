@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import React, { useEffect, useState } from "react";
-import { db } from "..firebase.js";
+import { db } from "../firebase.js";
 import { ref, onValue } from "firebase/database";
 export function Landing() {
     const [value, setValue] = useState("");

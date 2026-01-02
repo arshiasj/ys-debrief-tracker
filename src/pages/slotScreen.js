@@ -70,16 +70,26 @@ export function SlotScreen() {
   // =====================================================
   async function toggleShaky() {
     const newValue = !shaky;
+    console.log(newValue);
     setShaky(newValue);
     update(ref(db, `slotStates/${slotName}`), { shaky: newValue });
 
     if (newValue) {
       await addToQueue("shakyHands");
-      setCount("shaky", 1);
     } else {
       await removeFromQueue("shakyHands");
-      setCount("shaky", 0);
     }
+
+    const shakyQueueRef = ref(db, 'queues/shakyHands');
+    let shakyCount = 0;
+    onValue(shakyQueueRef, (snapshot) => {
+      const data = snapshot.val();
+      console.log(data);
+      shakyCount = data ? data.length : 0;
+
+      console.log(shakyCount)
+      setCount("shaky", shakyCount);
+    });
   }
 
   async function toggleAddingOn() {
@@ -104,8 +114,19 @@ export function SlotScreen() {
     const newValue = !fist;
     setFist(newValue);
 
-    setCount("fist", newValue ? 1 : 0);
+    const fistRef = ref(db, `counts/fist`);
+    const snap = await get(fistRef);
+    let data = snap.val() || 0;
+    console.log(data)
 
+    if (newValue) { // add fist of approval
+      data = data + 1;
+    } else { // remove fist of approval
+      data = Math.max(0, data - 1);
+    }
+
+    console.log(data);
+    setCount("fist", data);
     update(ref(db, `slotStates/${slotName}`), { fist: newValue });
   }
 
